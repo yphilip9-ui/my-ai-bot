@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: hagit-gpt-bridge
+    env: node
+    plan: free
+    buildCommand: ""
+    startCommand: "npm start"
+    healthCheckPath: /health
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: OPENAI_MODEL
+        value: gpt-4.1-mini
+      - key: GREEN_API_ID_INSTANCE
+        sync: false
+      - key: GREEN_API_TOKEN_INSTANCE
+        sync: false
+      - key: OWNER_CHAT_ID
+        sync: false
+      - key: HAGIT_CHAT_ID
+        sync: false
+      - key: HAGIT_NAME
+        value: Hagit
+      - key: DRY_RUN
+        value: "false"
